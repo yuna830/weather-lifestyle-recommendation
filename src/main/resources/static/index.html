@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>날씨별 라이프스타일 추천</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+    <h1>날씨별 라이프스타일 추천</h1>
+    <p class="subtitle">
+        오늘 날씨를 선택한 뒤, 추천받고 싶은 항목(음악·음식·옷 등)을 최대 두 가지까지 골라 보세요.
+    </p>
+
+    <div class="layout">
+        <section class="panel weather-panel">
+            <h2>오늘 날씨를 선택하세요</h2>
+            <p>먼저 왼쪽에서 날씨를 고른 뒤, 오른쪽에서 무엇을 추천받을지 선택합니다.</p>
+
+            <div class="weather-grid">
+                <button class="weather-card" data-weather="sunny" type="button">
+                    <div class="weather-icon">☀️</div>
+                    <div>
+                        <div class="weather-info-title">맑음</div>
+                        <div class="weather-info-desc">밝고 쾌적한 날씨</div>
+                    </div>
+                </button>
+
+                <button class="weather-card" data-weather="rainy" type="button">
+                    <div class="weather-icon">🌧️</div>
+                    <div>
+                        <div class="weather-info-title">비</div>
+                        <div class="weather-info-desc">조금 어두운 감성</div>
+                    </div>
+                </button>
+
+                <button class="weather-card" data-weather="snowy" type="button">
+                    <div class="weather-icon">❄️</div>
+                    <div>
+                        <div class="weather-info-title">눈</div>
+                        <div class="weather-info-desc">겨울·크리스마스 느낌</div>
+                    </div>
+                </button>
+
+                <button class="weather-card" data-weather="cold" type="button">
+                    <div class="weather-icon">🥶</div>
+                    <div>
+                        <div class="weather-info-title">추움 / 강풍</div>
+                        <div class="weather-info-desc">바람 많이 부는 추운 날</div>
+                    </div>
+                </button>
+
+                <button class="weather-card" data-weather="cloudy" type="button">
+                    <div class="weather-icon">☁️</div>
+                    <div>
+                        <div class="weather-info-title">구름 많음</div>
+                        <div class="weather-info-desc">잔잔한 흐린 하늘</div>
+                    </div>
+                </button>
+
+                <button class="weather-card" data-weather="foggy" type="button">
+                    <div class="weather-icon">🌫️</div>
+                    <div>
+                        <div class="weather-info-title">안개 많음</div>
+                        <div class="weather-info-desc">조금 몽환적인 분위기</div>
+                    </div>
+                </button>
+
+                <button class="weather-card" data-weather="thunder" type="button">
+                    <div class="weather-icon">⛈️</div>
+                    <div>
+                        <div class="weather-info-title">천둥·번개</div>
+                        <div class="weather-info-desc">집콕이 가장 안전한 날</div>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="recommend-header">
+                <h2>추천 보기</h2>
+                <div class="current-weather-label">
+                    선택한 날씨:
+                    <span id="currentWeather" class="current-weather-value">없음</span>
+                </div>
+            </div>
+
+            <div>
+                <div class="type-selector-title">무엇을 추천받을까요?</div>
+                <div class="type-selector-sub">
+                    항목은 동시에 <strong>최대 2개까지</strong> 선택할 수 있습니다.
+                </div>
+
+                <div class="type-chip-group" id="typeChipGroup">
+                    <button class="type-chip" data-type="music" type="button">
+                        <span class="emoji">🎵</span> 음악
+                    </button>
+                    <button class="type-chip" data-type="food" type="button">
+                        <span class="emoji">🍽️</span> 음식
+                    </button>
+                    <button class="type-chip" data-type="outfit" type="button">
+                        <span class="emoji">👕</span> 옷
+                    </button>
+                    <button class="type-chip" data-type="activity" type="button">
+                        <span class="emoji">🎬</span> 활동
+                    </button>
+                    <button class="type-chip" data-type="place" type="button">
+                        <span class="emoji">📍</span> 장소
+                    </button>
+                    <button class="type-chip" data-type="perfume" type="button">
+                        <span class="emoji">🌸</span> 향수
+                    </button>
+                </div>
+                <div class="limit-message" id="limitMessage"></div>
+            </div>
+
+            <div id="recommendationArea" class="recommendation-area">
+                <div class="empty-message" id="emptyMessage">
+                    왼쪽에서 날씨를 선택하고, 위에서 추천받을 항목을 골라 주세요.
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
